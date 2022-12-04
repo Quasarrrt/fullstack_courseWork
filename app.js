@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./swagger_output.json')
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { DBURL, limiter } = require('./config');
 
@@ -12,6 +14,7 @@ const router = require('./routes/index');
 const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 mongoose.connect(DBURL, {
   useNewUrlParser: true,
   useCreateIndex: true,

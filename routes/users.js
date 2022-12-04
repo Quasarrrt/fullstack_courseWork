@@ -7,6 +7,14 @@ const {
 } = require('../controllers/users');
 
 routerUsers.post('/signup', celebrate({
+  /*  #swagger.parameters['obj'] = {
+               in: 'body',
+               schema: {
+                   $name: 'Jhon Doe',
+                   $email: 'test@gmail.com',
+                   $password: '12345a'
+               }
+       } */
   body: Joi.object().keys({
     name: Joi.string().required().min(2).max(30),
     email: Joi.string().required().custom((value, helpers) => {
@@ -19,6 +27,13 @@ routerUsers.post('/signup', celebrate({
   }),
 }), createUser);
 routerUsers.post('/signin', celebrate({
+  /*  #swagger.parameters['obj'] = {
+              in: 'body',
+              schema: {
+                  $email: 'test@gmail.com',
+                  $password: '12345a'
+              }
+      } */
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required(),
@@ -27,6 +42,13 @@ routerUsers.post('/signin', celebrate({
 routerUsers.use(auth);
 routerUsers.get('/users/me', getUser);
 routerUsers.patch('/users/me', celebrate({
+  /*  #swagger.parameters['obj'] = {
+              in: 'body',
+              schema: {
+                  $name: 'Jhon Doe',
+                  $email: 'test@gmail.com',
+              }
+      } */
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
     email: Joi.string().required().email(),

@@ -7,9 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./app.js",
     "dev": "nodemon ./app.js",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "swagger-autogen": "node swagger.js"
   },
   "dependencies": {
+    "and": "^0.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "celebrate": "^14.0.0",
@@ -22,6 +24,10 @@
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.7",
+    "redoc": "^2.0.0",
+    "redoc-express": "^1.0.0",
+    "swagger-autogen": "^2.22.0",
+    "swagger-ui-express": "^4.6.0",
     "validator": "^13.6.0",
     "winston": "^3.3.3"
   },

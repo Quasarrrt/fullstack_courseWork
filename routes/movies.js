@@ -8,6 +8,22 @@ const {
 
 routerMovies.use(auth);
 routerMovies.post('/movies', celebrate({
+  /*  #swagger.parameters['obj'] = {
+              in: 'body',
+              schema: {
+                  $country: 'GER',
+                  $director: 'Jhon Doe',
+                  $duration: '213',
+                  $year: '2001',
+                  $description: 'asdad',
+                  $image: 'https://www.google.com/',
+                  $trailer: 'https://www.google.com/',
+                  $thumbnail: 'https://www.google.com/',
+                  $movieId: '1231',
+                  $nameRU: 'тест',
+                  $nameEN: 'test'
+              }
+      } */
   body: Joi.object().keys({
     country: Joi.string().required(),
     director: Joi.string().required(),
