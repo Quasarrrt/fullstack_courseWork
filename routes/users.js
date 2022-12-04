@@ -21,7 +21,7 @@ routerUsers.post('/signup', celebrate({
       if (validator.isEmail(value)) {
         return value;
       }
-      return helpers.message('Email введен в некорректно'); // Не забыть на фронте брать message из этого объекта валидации
+      return helpers.message('Email введен в некорректно');
     }),
     password: Joi.string().required(),
   }),

@@ -24,8 +24,6 @@
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.7",
-    "redoc": "^2.0.0",
-    "redoc-express": "^1.0.0",
     "swagger-autogen": "^2.22.0",
     "swagger-ui-express": "^4.6.0",
     "validator": "^13.6.0",
